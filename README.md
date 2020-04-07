@@ -6,5 +6,5 @@ Para isso, compilamos aqui de maneira colaborativa os contatos de pessoas de mui
 
 Nome | Github | Saindo de | Realocado? | Contratado por
 -- | -- | -- | -- | --
-Tony Stark | https://github.com/tony | Stark Industries | :ballot_box_with_check: |
-Natasha Romanoff | https://github.com/natasha | Shield | :ballot_box_with_check: | 
+Tony Stark | https://github.com/tony | Stark Industries | ☑️ |
+Natasha Romanoff | https://github.com/natasha | Shield | ☑️ | 
