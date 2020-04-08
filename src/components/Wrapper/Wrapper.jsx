@@ -16,7 +16,7 @@ import {
  */
 import {
     Flex,
-    Header,
+    Navbar,
     Hero,
     Content,
 } from '../';
@@ -66,7 +66,7 @@ function Wrapper({
                     }
                 `}
             />
-            <Header
+            <Navbar
                 theme={theme}
             />
             <Hero

@@ -2,7 +2,8 @@
  * Reducer Types
  */
 export const TYPES = {
-    CLEAR: '@TALENTS:CLEAR',
+    CLEAR : '@TALENTS:CLEAR',
+    SEARCH: '@TALENTS:SEARCH',
 
     LIST        : '@TALENTS:LIST',
     LIST_ERROR  : '@TALENTS:LIST_ERROR',

@@ -9,7 +9,7 @@ import {
 /**
  * Component Styles
  */
-const HeaderStyled = styled.header`
+const NavbarStyled = styled.nav`
     position: absolute;
     z-index : 50;
     top     : 0;
@@ -28,7 +28,7 @@ const HeaderStyled = styled.header`
         transition: color ease .3s;
     }
 
-    .header {
+    .navbar {
         &__nav {
             &__menu {
                 position  : relative;
@@ -56,11 +56,11 @@ const HeaderStyled = styled.header`
                         transition: background ease .3s, color ease .3s, border-radius ease .3s;
                     }
 
-                    &:hover .header__nav__menu__item__link,
-                    &:focus-within .header__nav__menu__item__link,
-                    .header__nav__menu__item__link.active,
-                    .header__nav__menu__item__link:active,
-                    .header__nav__menu__item__link:focus {
+                    &:hover .navbar__nav__menu__item__link,
+                    &:focus-within .navbar__nav__menu__item__link,
+                    .navbar__nav__menu__item__link.active,
+                    .navbar__nav__menu__item__link:active,
+                    .navbar__nav__menu__item__link:focus {
                         color: ${({ theme }) => theme.get('accent')};
                         background: ${({ theme }) => theme.get('accent', 'regular', 0.25)};
                     }
@@ -97,7 +97,7 @@ const HeaderStyled = styled.header`
                         }
                     }
 
-                    &:hover > .header__nav__menu__item__submenu,
+                    &:hover > .navbar__nav__menu__item__submenu,
                     &__submenu:hover {
                         visibility    : visible;
                         opacity       : 1;
@@ -114,7 +114,7 @@ const HeaderStyled = styled.header`
     ${({ theme }) => !theme.xs ? null : css`
         padding: 10px 0;
 
-        .header {
+        .navbar {
             &__menu {
                 &-toggle {
                     position: absolute;
@@ -134,7 +134,7 @@ const HeaderStyled = styled.header`
 
                     &:before,
                     &:after,
-                    .header__menu-toggle__stripe {
+                    .navbar__menu-toggle__stripe {
                         content: " ";
                         display: block;
                         margin : 6px auto;
@@ -168,7 +168,7 @@ const HeaderStyled = styled.header`
                     transform: translateX(0);
                 }
 
-                .header {
+                .navbar {
                     &__menu-toggle {
                         right: 5px;
 
@@ -229,4 +229,4 @@ const HeaderStyled = styled.header`
 /**
  * Exporting
  */
-export default HeaderStyled;
+export default NavbarStyled;

@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 /**
  * Component Itself
  */
-function HeaderMenu ({
+function NavbarMenu ({
     children,
     routes,
     handleClick,
@@ -18,9 +18,9 @@ function HeaderMenu ({
     return (
         <nav
             role="navigation"
-            className="header__nav">
+            className="navbar__nav">
             {children}
-            <ul className="header__nav__menu">
+            <ul className="navbar__nav__menu">
                 {Object.keys(routes).map((routeKey) => {
                     const route = routes[routeKey];
 
@@ -31,19 +31,19 @@ function HeaderMenu ({
                     return (
                         <li
                             key={routeKey}
-                            className="header__nav__menu__item">
+                            className="navbar__nav__menu__item">
                             <NavLink
                                 to={route.path}
                                 onClick={handleClick}
                                 aria-haspopup={!!route.multi}
                                 activeClassName="active"
-                                className="header__nav__menu__item__link">
+                                className="navbar__nav__menu__item__link">
                                 {route.menu}
                             </NavLink>
                             {(!route.multi) ? (null) : (
                                 <div
                                     aria-label="submenu"
-                                    className="header__nav__menu__item__submenu">
+                                    className="navbar__nav__menu__item__submenu">
                                     {Object.keys(routes).map((subRouteKey) => {
                                         const routeSub  = routes[subRouteKey];
                                         const { subOf } = (routeSub || {});
@@ -58,7 +58,7 @@ function HeaderMenu ({
                                                 onClick={handleClick}
                                                 id={subRouteKey}
                                                 key={subRouteKey}
-                                                className="header__nav__menu__item__submenu__item">
+                                                className="navbar__nav__menu__item__submenu__item">
                                                 {routeSub.menu}
                                             </NavLink>
                                         );
@@ -76,4 +76,4 @@ function HeaderMenu ({
 /**
  * Exporting
  */
-export default HeaderMenu;
+export default NavbarMenu;

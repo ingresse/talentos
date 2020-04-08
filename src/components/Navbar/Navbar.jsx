@@ -13,7 +13,7 @@ import {
 /**
  * Composition Components
  */
-import HeaderMenu from './HeaderMenu';
+import NavbarMenu from './NavbarMenu';
 import {
     Container,
     Logo,
@@ -22,12 +22,12 @@ import {
 /**
  * Component Styles
  */
-import HeaderStyled from './HeaderStyled';
+import NavbarStyled from './NavbarStyled';
 
 /**
  * Component Itself
  */
-function Header({
+function Navbar({
     theme,
     loading,
 }) {
@@ -47,12 +47,12 @@ function Header({
      * Render
      */
     return (
-        <HeaderStyled
-            id="header"
-            className="header">
+        <NavbarStyled
+            id="navbar"
+            className="navbar">
             <Container fluid>
                 <Logo
-                    className="header__brand"
+                    className="navbar__brand"
                 />
             </Container>
 
@@ -62,36 +62,36 @@ function Header({
                         <button
                             type="button"
                             onClick={toggleDrawer}
-                            className="header__menu-toggle">
-                            <span className="header__menu-toggle__stripe">
+                            className="navbar__menu-toggle">
+                            <span className="navbar__menu-toggle__stripe">
                                 menu
                             </span>
                         </button>
                     )}
                     <div
-                        id="header__drawer"
+                        id="navbar__drawer"
                         onClick={toggleDrawer}
-                        className={`header__drawer${!drawer ? '' : ' active'}`}>
+                        className={`navbar__drawer${!drawer ? '' : ' active'}`}>
                         <Logo
-                            className="header__brand"
+                            className="navbar__brand"
                         />
                         <button
                             type="button"
                             onClick={toggleDrawer}
-                            className="header__menu-toggle">
+                            className="navbar__menu-toggle">
                             close
                         </button>
-                        <HeaderMenu
+                        <NavbarMenu
                             routes={routes}
                         />
                     </div>
                 </>
             )}
-        </HeaderStyled>
+        </NavbarStyled>
     );
 }
 
 /**
  * Exporting
  */
-export { Header };
+export { Navbar };

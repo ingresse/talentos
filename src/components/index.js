@@ -1,20 +1,4 @@
 /**
- * Library Components Customization
- */
-import {
-    Button,
-} from '@ingresse/aphrodite';
-
-Button.defaultProps = {
-    ...Button.defaultProps,
-    radius: '0',
-};
-
-export {
-    Button,
-};
-
-/**
  * Re-exporting Library Components
  */
 export {
@@ -31,10 +15,13 @@ export {
     Dropdown,
     List,
     ListItem,
+    Modal,
 
     /**
      * Form
      */
+    Autocomplete,
+    Button,
     Input,
     InputMask,
     Select,
@@ -61,10 +48,10 @@ export {
  * Wrapper Components
  */
 export * from './Content/Content';
-export * from './Header/Header';
 export * from './Hero/Hero';
 export * from './ListItemLink/ListItemLink';
 export * from './Logo/Logo';
+export * from './Navbar/Navbar';
 export * from './Section/Section';
 export * from './Title/Title';
 export * from './Wrapper/Wrapper';
@@ -77,4 +64,6 @@ export * from './Router/Router';
 /**
  * Regular Components
  */
+export * from './Join/Join';
+export * from './Join/JoinModal';
 export * from './Talents/Talents';

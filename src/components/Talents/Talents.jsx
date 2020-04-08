@@ -42,14 +42,16 @@ function Talents() {
     const {
         error,
         loading,
-        content: list,
+        content,
+        search,
         initialized,
     } = useSelector((state) => state.talents.list);
+    const list = (search || content);
 
     /**
      * Local values
      */
-    const isEmpty      = !!(!loading && ((!list || !list.length) || !!error));
+    const isEmpty      = !!(!loading && ((!content || !content.length) || !!error));
     const displayEmbed = !!(isEmpty && initialized);
 
     /**
@@ -72,7 +74,12 @@ function Talents() {
         />
     ) : (
         <>
-            <TalentsSearch />
+            <TalentsSearch
+                xs={xs}
+                theme={theme}
+                list={list}
+                loading={loading}
+            />
             <TalentsList
                 xs={xs}
                 theme={theme}

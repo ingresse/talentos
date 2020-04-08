@@ -6,12 +6,25 @@ import {
 } from '../../services';
 
 /**
+ * Adapters
+ */
+import {
+    adapterList,
+} from './talents.adapters';
+
+/**
  * Talents list
  *
  * @returns {Promise}
  */
 function list() {
-    return service.list();
+    return new Promise((resolve, reject) => {
+        service.list()
+        .then((list) => {
+            resolve(adapterList(list));
+        })
+        .catch(reject);
+    });
 }
 
 /**

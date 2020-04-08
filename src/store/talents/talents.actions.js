@@ -44,6 +44,40 @@ export function listSuccess(data = null) {
 }
 
 /**
+ * Filter Talents List
+ *
+ * @param {array} list
+ * @param {array} roles
+ *
+ * @returns {object}
+ */
+export function filter(
+    list  = [],
+    roles = [],
+) {
+    let _data  = [];
+    let _roles = (roles || []).map((role) => role.label);
+
+    (list || []).map((professional) => {
+        if (!professional ||
+            !professional.Cargo ||
+            !_roles.includes(professional.Cargo)) {
+            return false;
+        }
+
+        _data.push(professional);
+
+        return true;
+    });
+
+    return {
+        type : TYPES.SEARCH,
+        data : _data,
+        roles: roles,
+    };
+}
+
+/**
  * Clear Talent data
  *
  * @returns {object}

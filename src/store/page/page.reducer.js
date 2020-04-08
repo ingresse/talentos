@@ -7,8 +7,7 @@ import TYPES from './page.types';
  * Initial State
  */
 const INITIAL_STATE = {
-    navbarDocked: true,
-    subtitle    : '',
+    subtitle: '',
 };
 
 /**

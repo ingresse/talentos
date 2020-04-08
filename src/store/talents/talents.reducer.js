@@ -19,6 +19,9 @@ const INITIAL_STATE = {
     details: INITIAL_MODEL,
     list   : {
         initialized: false,
+        search     : null,
+        roles      : null,
+        cities     : null,
         ...INITIAL_MODEL,
     },
 };
@@ -32,7 +35,17 @@ const INITIAL_STATE = {
  * @returns state
  */
 function talents(state = INITIAL_STATE, action = {}) {
-    const { type, data, error } = action;
+    const {
+        type,
+        data,
+        error,
+    } = action;
+
+    const {
+        list,
+        roles,
+        cities,
+    } = (data || {});
 
     switch (type) {
         case TYPES.CLEAR:
@@ -42,7 +55,7 @@ function talents(state = INITIAL_STATE, action = {}) {
             return {
                 ...state,
                 list: {
-                    ...INITIAL_MODEL,
+                    ...INITIAL_STATE.list,
                     loading: true,
                     initialized: true,
                 },
@@ -54,9 +67,20 @@ function talents(state = INITIAL_STATE, action = {}) {
                 ...state,
                 list: {
                     ...state.list,
-                    content: ((data && data.length) ? data : null),
+                    content: ((list && list.length) ? list : null),
+                    roles  : ((roles && roles.length) ? roles : null),
+                    cities : ((cities && cities.length) ? cities : null),
                     error  : (error || null),
                     loading: false,
+                },
+            };
+
+        case TYPES.SEARCH:
+            return {
+                ...state,
+                list: {
+                    ...state.list,
+                    search: ((data && data.length) ? data : null),
                 },
             };
 

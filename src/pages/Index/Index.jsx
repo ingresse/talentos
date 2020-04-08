@@ -37,12 +37,14 @@ function Index() {
         <section
             id="home">
             <Container fluid>
-                <Row>
+                <Row
+                    vertical="start"
+                    horizontal="center">
                     <Col
                         xs={12}
                         sm={12}
                         md={12}
-                        lg={6}>
+                        lg={4}>
                         <Section
                             first
                             id="home-disclaimer"
@@ -65,11 +67,34 @@ function Index() {
                         xs={12}
                         sm={12}
                         md={12}
-                        lg={6}>
+                        lg={4}>
                         <Section
                             first
                             id="home-goal"
                             title="Para isso, compilamos aqui de maneira colaborativa os contatos de pessoas de grande talento que podem contribuir muito em seu time."
+                        />
+                    </Col>
+                    <Col
+                        xs={12}
+                        sm={12}
+                        md={12}
+                        lg={4}>
+                        <Section
+                            first
+                            id="home-thanks"
+                            title={(
+                                <>
+                                    Obrigado a
+                                    {' '}
+                                    <A
+                                        target="_blank"
+                                        href="mailto:norte@norte.capital">
+                                        <strong>Norte Capital</strong>
+                                    </A>
+                                    {' '}
+                                    que compilou a lista e aos fundadores que disponibilizaram os bancos de dados de talentos.
+                                </>
+                            )}
                         />
                     </Col>
                 </Row>

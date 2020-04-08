@@ -14,7 +14,7 @@ import Index from './Index/Index';
 const routes = {
     index: {
         menu : '',
-        title: `Profissionais de Tecnologia`,
+        title: `Tecnologia`,
         path : '/',
         page : Index,
     },

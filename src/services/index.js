@@ -1,6 +1,7 @@
 /**
  * Services
  */
+export * from './analytics.service';
 export * from './spreadsheets.service';
 export * from './storage.service';
 

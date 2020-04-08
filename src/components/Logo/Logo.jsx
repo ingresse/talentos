@@ -33,7 +33,7 @@ function Logo() {
         position: relative;
         display : inline-block;
         margin  : 0;
-        padding : 5px 20px;
+        padding : 5px 15px;
 
         border-radius: 5px;
 
@@ -55,7 +55,7 @@ function Logo() {
         <NavLink
             css={styles}
             to={routes.index.path}>
-            TALENTOS
+            REDE DE TALENTOS
         </NavLink>
     );
 }

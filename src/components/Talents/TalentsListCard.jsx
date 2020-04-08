@@ -11,6 +11,13 @@ import {
 } from '../../css';
 
 /**
+ * Services
+ */
+import {
+    analytics,
+} from '../../services';
+
+/**
  * Composition Components
  */
 import {
@@ -55,6 +62,15 @@ function TalentsListCard({
     ) : linkedin);
 
     /**
+     * Handle Click
+     */
+    function handleClick() {
+        analytics.gtag('event', (linkedin || name), {
+            'event_category': 'LinkedIn aberto',
+        });
+    }
+
+    /**
      * Local values
      */
     const margin    = '5px 0';
@@ -65,11 +81,12 @@ function TalentsListCard({
         as   : 'div',
         block: true,
     } : {
-        as    : 'a',
-        target: '_blank',
-        rel   : 'no referrer',
-        href  : link,
-        title : 'Perfil do Profissional no LinkedIn',
+        as     : 'a',
+        target : '_blank',
+        rel    : 'no referrer',
+        href   : link,
+        title  : 'Perfil do Profissional no LinkedIn',
+        onClick: handleClick,
     });
     const elemSpaces = {
         margin : '10px 0',
