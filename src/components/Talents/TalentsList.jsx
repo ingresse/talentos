@@ -35,6 +35,7 @@ function TalentsList({
                     Empresa : formerCompany,
                     LinkedIn: linkedin,
                     Cidade  : city,
+                    "Área de Atuação"  : occupationArea,
                 } = (Professional || {});
                 const elId = `professional-found-${index}`;
 
@@ -57,6 +58,7 @@ function TalentsList({
                             formerCompany={formerCompany}
                             city={city}
                             linkedin={linkedin}
+                            occupationArea={occupationArea}
                         />
                     </Col>
                 );

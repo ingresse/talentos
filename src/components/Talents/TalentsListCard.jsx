@@ -45,12 +45,13 @@ function TalentsListCard({
     theme   = {},
     loading = false,
 
-    id            = '',
-    name          = '',
-    role          = '',
-    formerCompany = '',
-    city          = '',
-    linkedin      = '',
+    id             = '',
+    name           = '',
+    role           = '',
+    formerCompany  = '',
+    city           = '',
+    linkedin       = '',
+    occupationArea = '',
 }) {
     /**
      * Link
@@ -73,11 +74,12 @@ function TalentsListCard({
     /**
      * Local values
      */
-    const margin    = '5px 0';
-    const Title     = (xs ? H3 : H2);
-    const Role      = (xs ? Text : H3);
-    const Element   = (loading ? Placeholder : Card);
-    const elemProps = (loading ? {
+    const margin         = '5px 0';
+    const Title          = (xs ? H3 : H2);
+    const Role           = (xs ? Text : H3);
+    const OccupationArea = (xs ? Text : H3);
+    const Element        = (loading ? Placeholder : Card);
+    const elemProps      = (loading ? {
         as   : 'div',
         block: true,
     } : {
@@ -160,6 +162,24 @@ function TalentsListCard({
                     />
                 )}
             </Role>
+            <OccupationArea
+                helper
+                margin={margin}
+                styles={truncate}
+                title={`Área de atuação: ${occupationArea}`}
+                id={id.concat('-occupationArea')}>
+                {!loading ? occupationArea : (
+                    <Placeholder
+                        block
+                        as="span"
+                        width={240}
+                        height={xs ? 16 : 20}
+                        styles={{
+                            margin: (xs ? '2px 0' : '3px 0 1px')
+                        }}
+                    />
+                )}
+            </OccupationArea>
             <Row>
                 {(!city && !loading) ? null : (
                     <Col
